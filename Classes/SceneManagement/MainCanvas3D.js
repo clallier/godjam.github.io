@@ -31,7 +31,7 @@ MainCanvas3D.prototype.resize = function () {
 MainCanvas3D.prototype.startScene = function () {
     'use strict';
     if (this.renderer) return; // Prevent double initialization
-    
+
     if (!this.canvas) {
         console.error('MainCanvas3D: startScene failed - canvas element not found');
         return;
@@ -65,7 +65,7 @@ MainCanvas3D.prototype.startScene = function () {
     this.scene.add(this.camera);
 
     // the camera start position
-    this.camera.position.z = 300;
+    this.camera.position.y = -300;
 
     // Threejs resize
     this.resize();
