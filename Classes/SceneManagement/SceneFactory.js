@@ -456,14 +456,15 @@ SceneFactory.createScene = function (id) {
     params.key = id;
     params.canvasManager = this.canvasManager;
 
-    // console.log('createScene ' + params.key);
-
-    let highlighted = document.querySelectorAll('.highlight');
+    // console.log('createScene ' + params.key);    
+    const highlighted = document.querySelectorAll('.highlight');
     Array.from(highlighted).forEach((e) => e.classList.remove('highlight'));
-    let button = document.getElementById(id);
-    button.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-    button.classList.add('highlight')
-    button.focus()
-
+    const button = document.getElementById(id);
+    if (button != null) {
+        button.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+        button.classList.add('highlight')
+        button.focus()    
+    }
+    
     this.autoclose();
 };
