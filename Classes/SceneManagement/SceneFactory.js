@@ -16,9 +16,9 @@ window.addEventListener('DOMContentLoaded', function () {
 SceneFactory.toggleFullscreen = function () {
     'use strict';
     if (!document.fullscreenElement && // alternative standard method
-            !document.mozFullScreenElement &&
-            !document.webkitFullscreenElement &&
-            !document.msFullscreenElement) {
+        !document.mozFullScreenElement &&
+        !document.webkitFullscreenElement &&
+        !document.msFullscreenElement) {
         // current working methods
         if (document.documentElement.requestFullscreen) {
             document.documentElement.requestFullscreen();
@@ -44,12 +44,12 @@ SceneFactory.toggleFullscreen = function () {
 
 SceneFactory.initMenu = function () {
     'use strict';
-    
+
     SceneFactory.initButton('00');
     SceneFactory.initButton('01');
     SceneFactory.initButton('00_01');
     SceneFactory.initButton('00_03');
-    
+
     SceneFactory.initButton('00_04');
     SceneFactory.initButton('00_05');
     SceneFactory.initButton('00_06');
@@ -120,6 +120,7 @@ SceneFactory.initMenu = function () {
     SceneFactory.initButton('06_07');
     SceneFactory.initButton('06_10');
     SceneFactory.initButton('06_11');
+    SceneFactory.initButton('06_12');
     SceneFactory.initButton('06_13');
     SceneFactory.initButton('06_14');
     SceneFactory.initButton('06_15');
@@ -144,12 +145,12 @@ SceneFactory.initMenu = function () {
 
 SceneFactory.parseURL = function () {
     'use strict';
-    const prefered_keys = ['00_10', '02_09', '03_11', '04_03', '04_08', 
-                           '05_05', '05_06', '05_10', '05_13', '05_14', 
-                           '06_07', '06_11', '06_19', '07_01', '07_09',
-                           '07_11', '08_03', '08_10', '08_12', '09_01',
-                           'ES_09']
-    let rnd_index = ~~(Math.random()*prefered_keys.length)
+    const prefered_keys = ['00_10', '02_09', '03_11', '04_03', '04_08',
+        '05_05', '05_06', '05_10', '05_13', '05_14',
+        '06_07', '06_11', '06_19', '07_01', '07_09',
+        '07_11', '08_03', '08_10', '08_12', '09_01',
+        'ES_09']
+    let rnd_index = ~~(Math.random() * prefered_keys.length)
     let defaultKey = prefered_keys[rnd_index]; // '09_12'
 
     let key = '';
@@ -173,7 +174,7 @@ SceneFactory.init = function () {
 
     // Hides mobile browser's address bar when page is done loading.
     // http://www.html5rocks.com/en/mobile/mobifying/
-    setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+    setTimeout(function () { window.scrollTo(0, 1); }, 50);
 
     // based on : http://eloquentjavascript.net/10_modules.html
     this.cache = Object.create(null);
@@ -184,30 +185,30 @@ SceneFactory.init = function () {
     this.cache['01'] = ColorTestScene;
     // chap 0 : introduction
     this.cache['00_01'] = WalkerScene;
-    this.options['00_01'] = {walkertype: 0};
+    this.options['00_01'] = { walkertype: 0 };
 
     this.cache['00_03'] = WalkerScene;
-    this.options['00_03'] = {walkertype: 1};
+    this.options['00_03'] = { walkertype: 1 };
 
     this.cache['00_04'] = NormalDistribScene;
 
     this.cache['00_05'] = WalkerScene;
-    this.options['00_05'] = {walkertype: 2};
+    this.options['00_05'] = { walkertype: 2 };
 
     this.cache['00_06'] = WalkerScene;
-    this.options['00_06'] = {walkertype: 3};
+    this.options['00_06'] = { walkertype: 3 };
 
     this.cache['00_07'] = WalkerScene;
-    this.options['00_07'] = {walkertype: 4};
+    this.options['00_07'] = { walkertype: 4 };
 
     this.cache['00_09'] = PerlinNoiseScene;
     this.cache['00_10'] = NoiseScapeScene;
-    this.options['00_10'] = {threejs: true};
+    this.options['00_10'] = { threejs: true };
     // chap 1 : Vector
     this.cache['01_01'] = BouncingBallScene;
     this.cache['01_02'] = VectorWalkerScene;
     this.cache['01_03'] = BouncingBall3DScene;
-    this.options['01_03'] = {threejs: true};    
+    this.options['01_03'] = { threejs: true };
     this.cache['01_05'] = MoverAccelerationScene;
     this.cache['01_06'] = MoverPerlinScene;
     this.cache['01_08'] = MoverFollowScene;
@@ -228,19 +229,19 @@ SceneFactory.init = function () {
     this.cache['03_06'] = SinusoidalOcillationScene;
 
     this.cache['03_07'] = OscillatorScene;
-    this.options['03_07'] = {oscillatortype: 1};
+    this.options['03_07'] = { oscillatortype: 1 };
 
     this.cache['03_08'] = OscillatorScene;
-    this.options['03_08'] = {oscillatortype: 2};
+    this.options['03_08'] = { oscillatortype: 2 };
 
     this.cache['03_09'] = OscillatorScene;
-    this.options['03_09'] = {oscillatortype: 3};
+    this.options['03_09'] = { oscillatortype: 3 };
 
     this.cache['03_10'] = OscillatorScene;
-    this.options['03_10'] = {oscillatortype: 4};
+    this.options['03_10'] = { oscillatortype: 4 };
 
     this.cache['03_11'] = OscillatorScene;
-    this.options['03_11'] = {oscillatortype: 5};
+    this.options['03_11'] = { oscillatortype: 5 };
 
     this.cache['03_12'] = OscillationScene;
     this.cache['03_16'] = SpringsScene;
@@ -256,94 +257,94 @@ SceneFactory.init = function () {
     this.cache['04_09'] = ParticlesRepellerScene;
     this.cache['04_10'] = AttractiveParticlesScene;
     this.cache['04_11'] = BlendParticlesScene;
-    this.options['04_11'] = {isDark: true};
+    this.options['04_11'] = { isDark: true };
 
     // chap 5 : Physics Libraries
     this.cache['05_02'] = BoxesScene;
-    this.options['05_02'] = {boxes_type: 0};
+    this.options['05_02'] = { boxes_type: 0 };
 
     this.cache['05_03'] = BoxesScene;
-    this.options['05_03'] = {boxes_type: 1};
+    this.options['05_03'] = { boxes_type: 1 };
 
     this.cache['05_04'] = BoxesScene;
-    this.options['05_04'] = {boxes_type: 2};
+    this.options['05_04'] = { boxes_type: 2 };
 
     this.cache['05_05'] = BoxesScene;
-    this.options['05_05'] = {boxes_type: 3};
+    this.options['05_05'] = { boxes_type: 3 };
 
     this.cache['05_06'] = BoxesScene;
-    this.options['05_06'] = {boxes_type: 5};
+    this.options['05_06'] = { boxes_type: 5 };
 
     this.cache['05_07'] = BoxesScene;
-    this.options['05_07'] = {boxes_type: 6};
+    this.options['05_07'] = { boxes_type: 6 };
 
     this.cache['05_08'] = BoxesScene;
-    this.options['05_08'] = {boxes_type: 7};
+    this.options['05_08'] = { boxes_type: 7 };
 
     this.cache['05_09'] = BoxesScene;
-    this.options['05_09'] = {boxes_type: 8};
+    this.options['05_09'] = { boxes_type: 8 };
 
     this.cache['05_10'] = BoxesScene;
-    this.options['05_10'] = {boxes_type: 9};
+    this.options['05_10'] = { boxes_type: 9 };
 
     this.cache['05_11'] = CollisionListenerScene;
 
     this.cache['05_13'] = ToxiSimulationScene;
-    this.options['05_13'] = {sim_type: 0};
+    this.options['05_13'] = { sim_type: 0 };
 
     this.cache['05_14'] = ToxiSimulationScene;
-    this.options['05_14'] = {sim_type: 1};
+    this.options['05_14'] = { sim_type: 1 };
 
     this.cache['05_15'] = ClustersSystemScene;
 
     this.cache['05_16'] = ToxiSimulationScene;
-    this.options['05_16'] = {sim_type: 2};
+    this.options['05_16'] = { sim_type: 2 };
 
-    // chap 5 : Steering Behaviors
+    // chap 6 : Steering Behaviors
     this.cache['06_01'] = VehiclesSystemScene;
-    this.options['06_01'] = {behavior_type: 0};
+    this.options['06_01'] = { behavior_type: 0 };
 
     this.cache['06_02'] = VehiclesSystemScene;
-    this.options['06_02'] = {behavior_type: 1};
+    this.options['06_02'] = { behavior_type: 1 };
 
     this.cache['06_03'] = VehiclesSystemScene;
-    this.options['06_03'] = {behavior_type: 2};
+    this.options['06_03'] = { behavior_type: 2 };
 
     this.cache['06_04'] = VehiclesSystemScene;
-    this.options['06_04'] = {behavior_type: 3};
+    this.options['06_04'] = { behavior_type: 3 };
 
     this.cache['06_05'] = VehiclesSystemScene;
-    this.options['06_05'] = {behavior_type: 4};
+    this.options['06_05'] = { behavior_type: 4 };
 
     this.cache['06_07'] = VehiclesSystemScene;
-    this.options['06_07'] = {behavior_type: 5};
+    this.options['06_07'] = { behavior_type: 5 };
 
     this.cache['06_10'] = VehiclesSystemScene;
-    this.options['06_10'] = {behavior_type: 6};
+    this.options['06_10'] = { behavior_type: 6 };
 
     this.cache['06_11'] = VehiclesSystemScene;
-    this.options['06_11'] = {behavior_type: 7};
+    this.options['06_11'] = { behavior_type: 7 };
 
     this.cache['06_12'] = VehiclesSystemScene;
-    this.options['06_12'] = {behavior_type: 8};
+    this.options['06_12'] = { behavior_type: 8 };
 
     this.cache['06_13'] = VehiclesSystemScene;
-    this.options['06_13'] = {behavior_type: 9};
+    this.options['06_13'] = { behavior_type: 9 };
 
     this.cache['06_14'] = VehiclesSystemScene;
-    this.options['06_14'] = {behavior_type: 10};
+    this.options['06_14'] = { behavior_type: 10 };
 
     this.cache['06_15'] = VehiclesSystemScene;
-    this.options['06_15'] = {behavior_type: 11};
+    this.options['06_15'] = { behavior_type: 11 };
 
     this.cache['06_16'] = VehiclesSystemScene;
-    this.options['06_16'] = {behavior_type: 12};
+    this.options['06_16'] = { behavior_type: 12 };
 
     this.cache['06_17'] = VehiclesSystemScene;
-    this.options['06_17'] = {behavior_type: 13};
+    this.options['06_17'] = { behavior_type: 13 };
 
     this.cache['06_19'] = VehiclesSystemScene;
-    this.options['06_19'] = {behavior_type: 14};
+    this.options['06_19'] = { behavior_type: 14 };
 
     // TODO: Box2DVehicle
     // TODO: The Ecosystem project (p 343)
@@ -388,7 +389,7 @@ SceneFactory.initButton = function (id) {
 
     let button = document.getElementById(id);
     let canvas = button.querySelector('canvas');
-    
+
     if (button == null) {
         throw 'SceneFactory.initButton : button is null';
     }
@@ -405,9 +406,9 @@ SceneFactory.initButton = function (id) {
     }
 
     let canvasManager = (params.threejs) ?
-        new MiniCanvas3D(canvas, sceneKey, params):
+        new MiniCanvas3D(canvas, sceneKey, params) :
         new MiniCanvas2D(canvas, sceneKey, params);
-     
+
     params.key = id;
     params.canvasManager = canvasManager;
 
@@ -426,13 +427,6 @@ SceneFactory.createScene = function (id) {
         throw `SceneFactory.createScene : specified id (${id}) doesn't exists`;
     }
 
-    let canvasID = 'canvas';
-    let canvas = document.getElementById(canvasID);
-
-    if (canvas instanceof HTMLCanvasElement == false) {
-        throw 'SceneFactory.initButton : canvas is null';
-    }
-
     let params = Object.assign({}, this.options[id]);
 
     let sceneKey = this.cache[id];
@@ -445,7 +439,16 @@ SceneFactory.createScene = function (id) {
         this.canvasManager.stop();
         this.canvasManager = null;
     }
-    
+
+    let canvasID = 'canvas';
+    let oldCanvas = document.getElementById(canvasID);
+    let parent = oldCanvas.parentNode;
+    oldCanvas.remove();
+
+    let canvas = document.createElement('canvas');
+    canvas.id = canvasID;
+    parent.appendChild(canvas);
+
     this.canvasManager = (params.threejs) ?
         new MainCanvas3D(canvas, sceneKey, params) :
         new MainCanvas2D(canvas, sceneKey, params);
@@ -454,11 +457,11 @@ SceneFactory.createScene = function (id) {
     params.canvasManager = this.canvasManager;
 
     // console.log('createScene ' + params.key);
-    
+
     let highlighted = document.querySelectorAll('.highlight');
     Array.from(highlighted).forEach((e) => e.classList.remove('highlight'));
     let button = document.getElementById(id);
-    button.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+    button.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
     button.classList.add('highlight')
     button.focus()
 
